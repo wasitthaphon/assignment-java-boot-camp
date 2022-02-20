@@ -1,0 +1,24 @@
+# Compiled class file
+wasitthaphon/*.class
+
+# Log file
+wasitthaphon/*.log
+
+# BlueJ files
+wasitthaphon/*.ctxt
+
+# Mobile Tools for Java (J2ME)
+wasitthaphon/.mtj.tmp/
+
+# Package Files #
+wasitthaphon/*.jar
+wasitthaphon/*.war
+wasitthaphon/*.nar
+wasitthaphon/*.ear
+wasitthaphon/*.zip
+wasitthaphon/*.tar.gz
+wasitthaphon/*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+wasitthaphon/hs_err_pid*
+wasitthaphon/replay_pid*
