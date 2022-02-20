@@ -47,7 +47,7 @@ Response model - application/json <br>
 | price                        | Double   | ราคาของ product                    |
 | hasDiscount                  | Boolean  | แฟล็กใช้กำกับว่ามีการลดราคาหรือไม่ |
 | discount                     | Integer  | เปอร์เซ็นต์ลดราคา                  |
-| discountExpiredDate          | Date     | วันสุดท้ายของการลดราคา             |
+| discountExpiredDate          | String   | วันสุดท้ายของการลดราคา             |
 | rating                       | Double   | เรตติ้งเป็นเปอร์เซ็นต์             |
 | reviewerCount                | Integer  | จำนวนคนให้คะแนน                    |
 | sellCity                     | String   | เมืองที่จำหน่าย                    |
@@ -84,11 +84,11 @@ Response model - application/json <br>
 | &nbsp;&nbsp;&nbsp;featuresId | Integer  | รหัสฟีเจอร์                        |
 | &nbsp;&nbsp;&nbsp;name       | String   | ชื่อของฟีเจอร์                     |
 | &nbsp;&nbsp;&nbsp;isRequired | Boolean  | ตัวกำกับว่าบังคับหรือไม่           |
-| &nbsp;&nbsp;&nbsp;options    | String[] | รายการตัวเลือก                     |
+| &nbsp;&nbsp;&nbsp;options    | String   | รายการตัวเลือก                     |
 | price                        | Double   | ราคาของ product                    |
 | hasDiscount                  | Boolean  | แฟล็กใช้กำกับว่ามีการลดราคาหรือไม่ |
 | discount                     | Integer  | เปอร์เซ็นต์ลดราคา                  |
-| discountExpiredDate          | Date     | วันสุดท้ายของการลดราคา             |
+| discountExpiredDate          | String   | วันสุดท้ายของการลดราคา             |
 | rating                       | Double   | เรตติ้งเป็นเปอร์เซ็นต์             |
 | reviewerCount                | Integer  | จำนวนคนให้คะแนน                    |
 | sellCity                     | String   | เมืองที่จำหน่าย                    |
