@@ -2,7 +2,7 @@
 
 ## รายการ Api
 
-- [GET /baskets/{usesrId}](#get-basketsuserid)
+- [GET /baskets/{basketId}](#get-basketsuserid)
   - [Request](#request)
   - [Response](#response)
 - [POST /baskets/{userId}](#post-basketuserid)
@@ -11,7 +11,7 @@
 
 ## รายละเอียดของแต่ละ Api
 
-### GET /baskets/{userId}
+### GET /baskets/{basketId}
 
 **เรียกสินค้าเตรียมซื้อทั้งหมดในตระกร้าของผู้ใช้นั้น ๆ**
 **ส่งกลับรายการสินค้าเตรียมซื้อทั้งหมด**
@@ -22,9 +22,9 @@
 
 Path parameters
 
-| Name   | Type    | Description |
-| ------ | ------- | ----------- |
-| userId | Integer | ไอดีผู้ใช้  |
+| Name     | Type    | Description      |
+| -------- | ------- | ---------------- |
+| basketId | Integer | ไอดีตะกร้าสินค้า |
 
 #### Response
 
