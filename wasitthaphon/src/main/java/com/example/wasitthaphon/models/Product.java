@@ -22,13 +22,21 @@ public class Product {
     private int reviewerCount;
     private String sellCity;
     private String productProfileImageUrl;
-    private int orderQuantity;
+    private int onhandQuantity;
 
     @OneToMany(mappedBy = "product")
     private List<Feature> features;
 
     public int getProductId() {
         return productId;
+    }
+
+    public int getOnhandQuantity() {
+        return onhandQuantity;
+    }
+
+    public void setOnhandQuantity(int onhandQuantity) {
+        this.onhandQuantity = onhandQuantity;
     }
 
     public String getProductProfileImageUrl() {
@@ -121,14 +129,6 @@ public class Product {
 
     public void setSellCity(String sellCity) {
         this.sellCity = sellCity;
-    }
-
-    public int getOrderQuantity() {
-        return orderQuantity;
-    }
-
-    public void setOrderQuantity(int orderQuantity) {
-        this.orderQuantity = orderQuantity;
     }
 
 }
