@@ -1,11 +1,8 @@
 package com.example.wasitthaphon.models;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,9 +16,11 @@ public class Basket {
     @JoinColumn(name = "user_id", nullable = true)
     private User user;
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "product_id", nullable = true)
-    private List<Product> products;
+    private Product product;
+
+    private int orderQty;
 
     public int getBasketId() {
         return basketId;
@@ -31,20 +30,28 @@ public class Basket {
         this.basketId = basketId;
     }
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public int getOrderQty() {
+        return orderQty;
+    }
+
+    public void setOrderQty(int orderQty) {
+        this.orderQty = orderQty;
     }
 
 }
