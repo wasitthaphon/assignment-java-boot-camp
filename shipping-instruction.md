@@ -36,10 +36,11 @@ Request body - application/json
 | paymentStatus                                     | String   | สถานะการจ่ายเงิน       |
 | confirmedProducts                                 | Object[] |                        |
 | &nbsp;&nbsp;&nbsp;productId                       | Integer  | หมายเลขสินค้า          |
+| &nbsp;&nbsp;&nbsp;productPrice                    | Double   | ราคาสินค้า             |
+| &nbsp;&nbsp;&nbsp;orderQuantity                   | Integer  | จำนวนที่ซื้อ           |
 | &nbsp;&nbsp;&nbsp;features                        | Object[] | รายการฟีเจอร์          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name          | String   | ชื่อของฟีเจอร์         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedValue | String   | ตัวเลือกที่เลือก       |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderQuantity | Integer  | จำนวนที่ซื้อ           |
 
 #### Response
 
@@ -60,27 +61,14 @@ Path parameters
 
 Request body - application/json
 
-| Name                                              | Type     | Description            |
-| ------------------------------------------------- | -------- | ---------------------- |
-| email                                             | String   | อีเมล                  |
-| fullName                                          | String   | ชื่อเต็มของผู้สั่งซื้อ |
-| address                                           | String   | รายละเอียดที่อยู่      |
-| postalCode                                        | Integer  | หมายเลขไปรษณีย์        |
-| zone                                              | String   | เขต                    |
-| city                                              | String   | จังหวัด                |
-| telephone                                         | String   | หมายเลขโทรศัพท์        |
-| paymentMethod                                     | String   | วิธีจ่ายเงิน           |
-| paymentStatus                                     | String   | สถานะการจ่ายเงิน       |
-| confirmedProducts                                 | Object[] |                        |
-| &nbsp;&nbsp;&nbsp;productId                       | Integer  | หมายเลขสินค้า          |
-| &nbsp;&nbsp;&nbsp;features                        | Object[] | รายการฟีเจอร์          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name          | String   | ชื่อของฟีเจอร์         |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedValue | String   | ตัวเลือกที่เลือก       |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderQuantity | Integer  | จำนวนที่ซื้อ           |
+| Name          | Type   | Description      |
+| ------------- | ------ | ---------------- |
+| paymentMethod | String | วิธีจ่ายเงิน     |
+| paymentStatus | String | สถานะการจ่ายเงิน |
 
 #### Response
 
-Status code - 200
+Status code - 204
 
 ### GET /shipping-instruction/{id}
 
@@ -113,9 +101,10 @@ Response model - application/json <br>
 | paymentStatus                                     | String   | สถานะการจ่ายเงิน       |
 | confirmedProducts                                 | Object[] |                        |
 | &nbsp;&nbsp;&nbsp;productId                       | Integer  | หมายเลขสินค้า          |
+| &nbsp;&nbsp;&nbsp;productPrice                    | Double   | ราคาสินค้า             |
+| &nbsp;&nbsp;&nbsp;orderQuantity                   | Integer  | จำนวนที่ซื้อ           |
 | &nbsp;&nbsp;&nbsp;features                        | Object[] | รายการฟีเจอร์          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name          | String   | ชื่อของฟีเจอร์         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedValue | String   | ตัวเลือกที่เลือก       |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderQuantity | Integer  | จำนวนที่ซื้อ           |
 
 Status code - 200
