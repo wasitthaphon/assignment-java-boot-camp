@@ -5,8 +5,10 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "product")
 public class Product {
     @Id
     private int productId;
@@ -20,12 +22,21 @@ public class Product {
     private int reviewerCount;
     private String sellCity;
     private String productProfileImageUrl;
+    private int onhandQuantity;
 
-    @OneToMany(mappedBy = "productId")
+    @OneToMany(mappedBy = "product")
     private List<Feature> features;
 
     public int getProductId() {
         return productId;
+    }
+
+    public int getOnhandQuantity() {
+        return onhandQuantity;
+    }
+
+    public void setOnhandQuantity(int onhandQuantity) {
+        this.onhandQuantity = onhandQuantity;
     }
 
     public String getProductProfileImageUrl() {

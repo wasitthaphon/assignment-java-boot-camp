@@ -3,7 +3,6 @@ package com.example.wasitthaphon.controllers;
 import java.util.List;
 
 import com.example.wasitthaphon.models.Product;
-import com.example.wasitthaphon.models.ProductList;
 import com.example.wasitthaphon.services.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,15 +17,12 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping("/products")
-    public ProductList getProducts(@RequestParam("limit") int limit,
+    public List<Product> getProducts(@RequestParam("limit") int limit,
             @RequestParam("search_query") String key) {
 
-        ProductList productList = new ProductList();
         List<Product> products = productService.getProducts(key, limit);
 
-        productList.setProducts(products);
-
-        return productList;
+        return products;
     }
 
     @GetMapping("/products/{id}")

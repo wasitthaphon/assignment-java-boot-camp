@@ -22,7 +22,7 @@ Request body - application/json
 
 | Name                  | Type    | Description            |
 | --------------------- | ------- | ---------------------- |
-| fullName              | String  | ชื่อผู้ซื้อ            |
+| userId                | Integer | ไอดี user              |
 | shippingInstructionId | Integer | หมายเลขใบคำสั่งส่งของ  |
 | transactionDate       | String  | วันเวลาที่ทำรายการซื้อ |
 | expiredDate           | String  | วันเวลาที่หมดอายุ      |

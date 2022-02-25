@@ -1,27 +1,32 @@
 package com.example.wasitthaphon.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "feature")
 public class Feature {
     @Id
     private int featureId;
-    private int productId;
     private String name;
     private Boolean isRequired;
-    private String options;
+    private int selectedOption;
+
+    @OneToOne
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
+
+    @OneToMany(mappedBy = "feature")
+    private List<FeatureOption> featureOptions;
 
     public int getFeatureId() {
         return featureId;
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
     }
 
     public void setFeatureId(int featuresId) {
@@ -44,12 +49,28 @@ public class Feature {
         this.isRequired = isRequired;
     }
 
-    public String getOptions() {
-        return options;
+    public List<FeatureOption> getFeatureOptions() {
+        return featureOptions;
     }
 
-    public void setOptions(String options) {
-        this.options = options;
+    public void setFeatureOptions(List<FeatureOption> featureOptions) {
+        this.featureOptions = featureOptions;
+    }
+
+    public int getSelectedOption() {
+        return selectedOption;
+    }
+
+    public void setSelectedOption(int selectedOption) {
+        this.selectedOption = selectedOption;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
 }
