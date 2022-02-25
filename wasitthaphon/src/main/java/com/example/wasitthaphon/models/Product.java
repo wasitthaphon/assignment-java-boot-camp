@@ -5,8 +5,10 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "product")
 public class Product {
     @Id
     private int productId;
@@ -20,8 +22,9 @@ public class Product {
     private int reviewerCount;
     private String sellCity;
     private String productProfileImageUrl;
+    private int orderQuantity;
 
-    @OneToMany(mappedBy = "productId")
+    @OneToMany(mappedBy = "product")
     private List<Feature> features;
 
     public int getProductId() {
@@ -118,6 +121,14 @@ public class Product {
 
     public void setSellCity(String sellCity) {
         this.sellCity = sellCity;
+    }
+
+    public int getOrderQuantity() {
+        return orderQuantity;
+    }
+
+    public void setOrderQuantity(int orderQuantity) {
+        this.orderQuantity = orderQuantity;
     }
 
 }
