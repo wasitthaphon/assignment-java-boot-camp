@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,24 +14,19 @@ import javax.persistence.Table;
 public class Feature {
     @Id
     private int featureId;
-    private int productId;
     private String name;
     private Boolean isRequired;
     private int selectedOption;
+
+    @OneToOne
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 
     @OneToMany(mappedBy = "feature")
     private List<FeatureOption> featureOptions;
 
     public int getFeatureId() {
         return featureId;
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
     }
 
     public void setFeatureId(int featuresId) {
@@ -66,6 +63,14 @@ public class Feature {
 
     public void setSelectedOption(int selectedOption) {
         this.selectedOption = selectedOption;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
 }
