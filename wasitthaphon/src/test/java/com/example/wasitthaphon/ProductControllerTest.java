@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.wasitthaphon.models.Feature;
+import com.example.wasitthaphon.models.FeatureOption;
 import com.example.wasitthaphon.models.Product;
-import com.example.wasitthaphon.models.ProductList;
 import com.example.wasitthaphon.repositories.FeatureRepository;
 import com.example.wasitthaphon.repositories.ProductRepository;
 
@@ -38,15 +38,11 @@ public class ProductControllerTest {
     public List<Product> setProducts() {
         List<Product> products = new ArrayList<Product>();
         Product product1 = new Product();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
-        Date date = new Date();
-
         Product product2 = new Product();
         Product product3 = new Product();
         Product product4 = new Product();
         Product product5 = new Product();
-
+        // Product product6 = new Product();
         Feature feature = new Feature();
         Feature feature2 = new Feature();
         Feature feature3 = new Feature();
@@ -54,12 +50,10 @@ public class ProductControllerTest {
         Feature feature5 = new Feature();
         Feature feature6 = new Feature();
         Feature feature7 = new Feature();
+        Feature feature8 = new Feature();
 
-        List<Feature> features1 = new ArrayList<Feature>();
-        List<Feature> features2 = new ArrayList<Feature>();
-        List<Feature> features3 = new ArrayList<Feature>();
-        List<Feature> features4 = new ArrayList<Feature>();
-        List<Feature> features5 = new ArrayList<Feature>();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
 
         product1.setProductId(1);
         product1.setStoreId(1);
@@ -73,23 +67,6 @@ public class ProductControllerTest {
         product1.setRating(40.0);
         product1.setReviewerCount(70);
 
-        feature.setFeatureId(1);
-        feature.setProductId(1);
-        feature.setName("Size");
-        feature.setIsRequired(true);
-        feature.setOptions("Size,EU:40");
-
-        feature2.setFeatureId(2);
-        feature2.setProductId(1);
-        feature2.setName("Color");
-        feature2.setIsRequired(true);
-        feature2.setOptions("Color,Green,Black");
-
-        features1.add(feature);
-        features1.add(feature2);
-        product1.setFeatures(features1);
-        products.add(product1);
-
         product2.setProductId(2);
         product2.setStoreId(2);
         product2.setTitle("Biggy Adidas NMD Normal Green");
@@ -101,23 +78,6 @@ public class ProductControllerTest {
         product2.setProductProfileImageUrl("www.pic-zip.com/adidas-nmd-a.jpg");
         product2.setRating(40.0);
         product2.setReviewerCount(70);
-
-        feature3.setFeatureId(3);
-        feature3.setProductId(2);
-        feature3.setName("Size");
-        feature3.setIsRequired(true);
-        feature3.setOptions("Size,EU:33");
-
-        feature4.setFeatureId(4);
-        feature4.setProductId(2);
-        feature4.setName("Size");
-        feature4.setIsRequired(true);
-        feature4.setOptions("Size,EU:35");
-
-        features2.add(feature3);
-        features2.add(feature4);
-        product2.setFeatures(features2);
-        products.add(product2);
 
         product3.setProductId(3);
         product3.setStoreId(3);
@@ -131,17 +91,6 @@ public class ProductControllerTest {
         product3.setRating(40.0);
         product3.setReviewerCount(70);
 
-        feature5.setFeatureId(5);
-        feature5.setProductId(3);
-        feature5.setName("Size");
-        feature5.setIsRequired(true);
-        feature5.setOptions("Size,EU:40");
-
-        features3.add(feature5);
-        product3.setFeatures(features3);
-
-        products.add(product3);
-
         product4.setProductId(4);
         product4.setStoreId(4);
         product4.setTitle("Frame base blue Adidas NMD  peach");
@@ -153,17 +102,6 @@ public class ProductControllerTest {
         product4.setProductProfileImageUrl("www.pic-zip.com/adidas-nmd-a.jpg");
         product4.setRating(40.0);
         product4.setReviewerCount(70);
-
-        feature6.setFeatureId(6);
-        feature6.setProductId(4);
-        feature6.setName("Size");
-        feature6.setIsRequired(true);
-        feature6.setOptions("Size,EU:40");
-
-        features4.add(feature6);
-        product4.setFeatures(features4);
-
-        products.add(product4);
 
         product5.setProductId(5);
         product5.setStoreId(5);
@@ -177,16 +115,175 @@ public class ProductControllerTest {
         product5.setRating(40.0);
         product5.setReviewerCount(70);
 
+        // product6.setProductId(6);
+        // product6.setStoreId(6);
+        // product6.setTitle("Hexa mana sand");
+        // product6.setPrice(15900.0);
+        // product6.setHasDiscount(true);
+        // product6.setDiscount(34);
+        // product6.setDiscountExpiredDate(formatter.format(date));
+        // product6.setSellCity("ขอนแก่น");
+        // product6.setProductProfileImageUrl("www.pic-zip.com/adidas-nmd-a.jpg");
+        // product6.setRating(40.0);
+        // product6.setReviewerCount(70);
+
+        FeatureOption featureOption1 = new FeatureOption();
+        FeatureOption featureOption2 = new FeatureOption();
+        FeatureOption featureOption3 = new FeatureOption();
+        FeatureOption featureOption4 = new FeatureOption();
+        FeatureOption featureOption5 = new FeatureOption();
+        FeatureOption featureOption6 = new FeatureOption();
+        FeatureOption featureOption7 = new FeatureOption();
+        FeatureOption featureOption8 = new FeatureOption();
+        FeatureOption featureOption9 = new FeatureOption();
+        FeatureOption featureOption10 = new FeatureOption();
+        FeatureOption featureOption11 = new FeatureOption();
+        FeatureOption featureOption12 = new FeatureOption();
+        FeatureOption featureOption13 = new FeatureOption();
+        FeatureOption featureOption14 = new FeatureOption();
+        FeatureOption featureOption15 = new FeatureOption();
+        FeatureOption featureOption16 = new FeatureOption();
+        FeatureOption featureOption17 = new FeatureOption();
+
+        List<FeatureOption> featureOptions1List = new ArrayList<FeatureOption>();
+        List<FeatureOption> featureOptions2List = new ArrayList<FeatureOption>();
+        List<FeatureOption> featureOptions3List = new ArrayList<FeatureOption>();
+        List<FeatureOption> featureOptions4List = new ArrayList<FeatureOption>();
+        List<FeatureOption> featureOptions5List = new ArrayList<FeatureOption>();
+        List<FeatureOption> featureOptions6List = new ArrayList<FeatureOption>();
+        List<FeatureOption> featureOptions7List = new ArrayList<FeatureOption>();
+        List<FeatureOption> featureOptions8List = new ArrayList<FeatureOption>();
+
+        feature.setFeatureId(1);
+        feature.setProduct(product1);
+        feature.setName("Size");
+        feature.setIsRequired(true);
+
+        featureOption1.setFeature(feature);
+        featureOption1.setFeatureOptionId(1);
+        featureOption1.setOption("Size");
+        featureOptions1List.add(featureOption1);
+        featureOption2.setFeature(feature);
+        featureOption2.setFeatureOptionId(2);
+        featureOption2.setOption("EU:40");
+        featureOptions1List.add(featureOption2);
+        feature.setFeatureOptions(featureOptions1List);
+
+        feature2.setFeatureId(2);
+        feature2.setProduct(product1);
+        feature2.setName("Color");
+        feature2.setIsRequired(true);
+
+        featureOption3.setFeature(feature2);
+        featureOption3.setFeatureOptionId(3);
+        featureOption3.setOption("Color");
+        featureOptions2List.add(featureOption3);
+        featureOption4.setFeature(feature2);
+        featureOption4.setFeatureOptionId(4);
+        featureOption4.setOption("Green");
+        featureOptions2List.add(featureOption4);
+        featureOption5.setFeature(feature2);
+        featureOption5.setFeatureOptionId(5);
+        featureOption5.setOption("Black");
+        featureOptions2List.add(featureOption4);
+        feature2.setFeatureOptions(featureOptions2List);
+
+        feature3.setFeatureId(3);
+        feature3.setProduct(product2);
+        feature3.setName("Size");
+        feature3.setIsRequired(true);
+
+        featureOption6.setFeature(feature3);
+        featureOption6.setFeatureOptionId(6);
+        featureOption6.setOption("Size");
+        featureOptions3List.add(featureOption6);
+        featureOption7.setFeature(feature3);
+        featureOption7.setFeatureOptionId(7);
+        featureOption7.setOption("EU:33");
+        featureOptions3List.add(featureOption7);
+        feature3.setFeatureOptions(featureOptions3List);
+
+        feature4.setFeatureId(4);
+        feature4.setProduct(product2);
+        feature4.setName("Size");
+        feature4.setIsRequired(true);
+
+        featureOption8.setFeature(feature4);
+        featureOption8.setFeatureOptionId(8);
+        featureOption8.setOption("Size");
+        featureOptions4List.add(featureOption8);
+        featureOption9.setFeature(feature4);
+        featureOption9.setFeatureOptionId(9);
+        featureOption9.setOption("EU:35");
+        featureOptions4List.add(featureOption9);
+        feature4.setFeatureOptions(featureOptions4List);
+
+        feature5.setFeatureId(5);
+        feature5.setProduct(product3);
+        feature5.setName("Size");
+        feature5.setIsRequired(true);
+
+        featureOption10.setFeature(feature5);
+        featureOption10.setFeatureOptionId(10);
+        featureOption10.setOption("Size");
+        featureOptions5List.add(featureOption10);
+        featureOption11.setFeature(feature5);
+        featureOption11.setFeatureOptionId(11);
+        featureOption11.setOption("EU:40");
+        featureOptions5List.add(featureOption11);
+        feature5.setFeatureOptions(featureOptions5List);
+
+        feature6.setFeatureId(6);
+        feature6.setProduct(product4);
+        feature6.setName("Size");
+        feature6.setIsRequired(true);
+
+        featureOption12.setFeature(feature6);
+        featureOption12.setFeatureOptionId(12);
+        featureOption12.setOption("Size");
+        featureOptions6List.add(featureOption12);
+        featureOption13.setFeature(feature6);
+        featureOption13.setFeatureOptionId(13);
+        featureOption13.setOption("EU:40");
+        featureOptions6List.add(featureOption13);
+        feature6.setFeatureOptions(featureOptions6List);
+
         feature7.setFeatureId(7);
-        feature7.setProductId(5);
+        feature7.setProduct(product5);
         feature7.setName("Size");
         feature7.setIsRequired(true);
-        feature7.setOptions("Size,EU:40");
 
-        features5.add(feature7);
-        product5.setFeatures(features5);
+        featureOption14.setFeature(feature6);
+        featureOption14.setFeatureOptionId(14);
+        featureOption14.setOption("Size");
+        featureOptions7List.add(featureOption14);
+        featureOption15.setFeature(feature6);
+        featureOption15.setFeatureOptionId(15);
+        featureOption15.setOption("EU:40");
+        featureOptions7List.add(featureOption15);
+        feature7.setFeatureOptions(featureOptions7List);
 
+        // feature8.setFeatureId(8);
+        // feature8.setProduct(product6);
+        // feature8.setName("Size");
+        // feature8.setIsRequired(true);
+
+        // featureOption16.setFeature(feature6);
+        // featureOption16.setFeatureOptionId(16);
+        // featureOption16.setOption("Size");
+        // featureOptions8List.add(featureOption16);
+        // featureOption17.setFeature(feature6);
+        // featureOption17.setFeatureOptionId(17);
+        // featureOption17.setOption("EU:40");
+        // featureOptions8List.add(featureOption17);
+        // feature8.setFeatureOptions(featureOptions8List);
+
+        products.add(product1);
+        products.add(product2);
+        products.add(product3);
+        products.add(product4);
         products.add(product5);
+        // products.add(product6);
 
         return products;
     }
@@ -201,13 +298,13 @@ public class ProductControllerTest {
         when(productRepository.findByTitleContains("Adidas NMD", pageable)).thenReturn(Optional.of(products));
 
         // Act
-        ProductList response = testRestTemplate.getForObject(
-                "/products?search_query=Adidas NMD&limit=" + pageSize, ProductList.class);
+        Product[] response = testRestTemplate.getForObject(
+                "/products?search_query=Adidas NMD&limit=" + pageSize, Product[].class);
 
         // Assert
-        Assertions.assertEquals(5, response.getProducts().size());
-        for (int i = 0; i < response.getProducts().size(); i++) {
-            Assertions.assertTrue(response.getProducts().get(i).getTitle().indexOf("Adidas NMD") > -1 ? true : false);
+        Assertions.assertEquals(5, response.length);
+        for (int i = 0; i < response.length; i++) {
+            Assertions.assertTrue(response[i].getTitle().indexOf("Adidas NMD") > -1 ? true : false);
         }
     }
 
