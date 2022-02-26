@@ -51,7 +51,6 @@ public class BasketService {
     }
 
     public Basket createBasket(BasketRequestBody basketRequestBody) {
-        final int REVERSE = -1;
         Basket basket = new Basket();
         Optional<User> user;
         Optional<Product> product;
@@ -90,7 +89,8 @@ public class BasketService {
         basket.setBasketId((int) basketRepository.count() + 1);
         basket.setOrderQty(basketRequestBody.getOrderQuantity());
         basket.setProduct(product.get());
-        productRepository.updateQuantity(basketRequestBody.getOrderQuantity() * REVERSE);
+        product.get().setOnhandQuantity(product.get().getOnhandQuantity() - basketRequestBody.getOrderQuantity());
+        productRepository.save(product);
         basketRepository.save(basket);
 
         return basket;
