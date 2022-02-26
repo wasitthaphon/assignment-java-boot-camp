@@ -55,7 +55,6 @@ public class BasketServiceTest {
         Product product3 = new Product();
         Product product4 = new Product();
         Product product5 = new Product();
-        Product product6 = new Product();
         Feature feature = new Feature();
         Feature feature2 = new Feature();
         Feature feature3 = new Feature();
@@ -63,7 +62,6 @@ public class BasketServiceTest {
         Feature feature5 = new Feature();
         Feature feature6 = new Feature();
         Feature feature7 = new Feature();
-        Feature feature8 = new Feature();
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
@@ -74,6 +72,7 @@ public class BasketServiceTest {
         product1.setPrice(15900.0);
         product1.setHasDiscount(true);
         product1.setDiscount(34);
+        product1.setOnhandQuantity(5);
         product1.setDiscountExpiredDate(formatter.format(date));
         product1.setSellCity("ขอนแก่น");
         product1.setProductProfileImageUrl("www.pic-zip.com/adidas-nmd-a.jpg");
@@ -84,6 +83,7 @@ public class BasketServiceTest {
         product2.setStoreId(2);
         product2.setTitle("Biggy Adidas NMD Normal Green");
         product2.setPrice(15900.0);
+        product2.setOnhandQuantity(5);
         product2.setHasDiscount(true);
         product2.setDiscount(34);
         product2.setDiscountExpiredDate(formatter.format(date));
@@ -96,6 +96,7 @@ public class BasketServiceTest {
         product3.setStoreId(3);
         product3.setTitle("Black Friday hwak Adidas NMD");
         product3.setPrice(15900.0);
+        product3.setOnhandQuantity(5);
         product3.setHasDiscount(true);
         product3.setDiscount(34);
         product3.setDiscountExpiredDate(formatter.format(date));
@@ -108,6 +109,7 @@ public class BasketServiceTest {
         product4.setStoreId(4);
         product4.setTitle("Frame base blue Adidas NMD  peach");
         product4.setPrice(15900.0);
+        product4.setOnhandQuantity(5);
         product4.setHasDiscount(true);
         product4.setDiscount(34);
         product4.setDiscountExpiredDate(formatter.format(date));
@@ -120,6 +122,7 @@ public class BasketServiceTest {
         product5.setStoreId(5);
         product5.setTitle("Adidas NMD jagged move");
         product5.setPrice(15900.0);
+        product5.setOnhandQuantity(5);
         product5.setHasDiscount(true);
         product5.setDiscount(34);
         product5.setDiscountExpiredDate(formatter.format(date));
@@ -149,7 +152,6 @@ public class BasketServiceTest {
         ProductImage productImage3 = new ProductImage();
         ProductImage productImage4 = new ProductImage();
         ProductImage productImage5 = new ProductImage();
-        ProductImage productImage6 = new ProductImage();
 
         List<FeatureOption> featureOptions1List = new ArrayList<FeatureOption>();
         List<FeatureOption> featureOptions2List = new ArrayList<FeatureOption>();
@@ -164,7 +166,6 @@ public class BasketServiceTest {
         List<ProductImage> productImages3 = new ArrayList<ProductImage>();
         List<ProductImage> productImages4 = new ArrayList<ProductImage>();
         List<ProductImage> productImages5 = new ArrayList<ProductImage>();
-        List<ProductImage> productImages6 = new ArrayList<ProductImage>();
 
         feature.setId(1);
         feature.setProduct(product1);
@@ -417,5 +418,6 @@ public class BasketServiceTest {
 
         // Assert
         assertEquals(1, result.getBasketId());
+        assertEquals(4, result.getProduct().getOnhandQuantity());
     }
 }
