@@ -3,34 +3,33 @@ package com.example.wasitthaphon.models;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "feature")
 public class Feature {
     @Id
-    private int featureId;
+    private int id;
     private String name;
     private Boolean isRequired;
     private int selectedOption;
 
-    @OneToOne
-    @JoinColumn(name = "product_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Product product;
 
     @OneToMany(mappedBy = "feature")
+    @JsonManagedReference
     private List<FeatureOption> featureOptions;
 
-    public int getFeatureId() {
-        return featureId;
-    }
-
-    public void setFeatureId(int featuresId) {
-        this.featureId = featuresId;
+    public Feature() {
     }
 
     public String getName() {
@@ -49,14 +48,6 @@ public class Feature {
         this.isRequired = isRequired;
     }
 
-    public List<FeatureOption> getFeatureOptions() {
-        return featureOptions;
-    }
-
-    public void setFeatureOptions(List<FeatureOption> featureOptions) {
-        this.featureOptions = featureOptions;
-    }
-
     public int getSelectedOption() {
         return selectedOption;
     }
@@ -65,12 +56,28 @@ public class Feature {
         this.selectedOption = selectedOption;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Product getProduct() {
         return product;
     }
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public List<FeatureOption> getFeatureOptions() {
+        return featureOptions;
+    }
+
+    public void setFeatureOptions(List<FeatureOption> featureOptions) {
+        this.featureOptions = featureOptions;
     }
 
 }
