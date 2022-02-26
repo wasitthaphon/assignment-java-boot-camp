@@ -17,9 +17,6 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
-    @Autowired
-    FeatureService featureService;
-
     public List<Product> getProducts() {
         List<Product> products = productRepository.findAll();
 
