@@ -2,16 +2,19 @@ package com.example.wasitthaphon.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "product")
 public class Product {
     @Id
-    private int productId;
+    private int id;
     private int storeId;
     private String title;
     private Double price;
@@ -24,12 +27,13 @@ public class Product {
     private String productProfileImageUrl;
     private int onhandQuantity;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Feature> features;
 
-    public int getProductId() {
-        return productId;
-    }
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<ProductImage> productImages;
 
     public int getOnhandQuantity() {
         return onhandQuantity;
@@ -53,10 +57,6 @@ public class Product {
 
     public void setFeatures(List<Feature> features) {
         this.features = features;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
     }
 
     public int getStoreId() {
@@ -129,6 +129,22 @@ public class Product {
 
     public void setSellCity(String sellCity) {
         this.sellCity = sellCity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<ProductImage> getProductImages() {
+        return productImages;
+    }
+
+    public void setProductImages(List<ProductImage> productImages) {
+        this.productImages = productImages;
     }
 
 }

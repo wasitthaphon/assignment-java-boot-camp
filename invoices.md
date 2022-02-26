@@ -26,7 +26,6 @@ Request body - application/json
 | shippingInstructionId | Integer | หมายเลขใบคำสั่งส่งของ  |
 | transactionDate       | String  | วันเวลาที่ทำรายการซื้อ |
 | expiredDate           | String  | วันเวลาที่หมดอายุ      |
-| amount                | Double  | ยอดที่ต้องชำระ         |
 
 #### Response
 
