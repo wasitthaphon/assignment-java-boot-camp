@@ -6,6 +6,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "featureOption")
 public class FeatureOption {
@@ -13,7 +15,8 @@ public class FeatureOption {
     private int featureOptionId;
 
     @OneToOne
-    @JoinColumn(name = "feature_id")
+    @JoinColumn(name = "feature_id", nullable = false)
+    @JsonBackReference
     private Feature feature;
 
     private String option;
