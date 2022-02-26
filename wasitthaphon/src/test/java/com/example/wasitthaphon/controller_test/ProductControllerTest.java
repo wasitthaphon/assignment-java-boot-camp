@@ -51,7 +51,6 @@ public class ProductControllerTest {
         Product product3 = new Product();
         Product product4 = new Product();
         Product product5 = new Product();
-        Product product6 = new Product();
         Feature feature = new Feature();
         Feature feature2 = new Feature();
         Feature feature3 = new Feature();
@@ -59,7 +58,6 @@ public class ProductControllerTest {
         Feature feature5 = new Feature();
         Feature feature6 = new Feature();
         Feature feature7 = new Feature();
-        Feature feature8 = new Feature();
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
@@ -145,7 +143,6 @@ public class ProductControllerTest {
         ProductImage productImage3 = new ProductImage();
         ProductImage productImage4 = new ProductImage();
         ProductImage productImage5 = new ProductImage();
-        ProductImage productImage6 = new ProductImage();
 
         List<FeatureOption> featureOptions1List = new ArrayList<FeatureOption>();
         List<FeatureOption> featureOptions2List = new ArrayList<FeatureOption>();
@@ -160,7 +157,6 @@ public class ProductControllerTest {
         List<ProductImage> productImages3 = new ArrayList<ProductImage>();
         List<ProductImage> productImages4 = new ArrayList<ProductImage>();
         List<ProductImage> productImages5 = new ArrayList<ProductImage>();
-        List<ProductImage> productImages6 = new ArrayList<ProductImage>();
 
         feature.setId(1);
         feature.setProduct(product1);
