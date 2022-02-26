@@ -1,4 +1,4 @@
-package com.example.wasitthaphon;
+package com.example.wasitthaphon.controller_test;
 
 import static org.mockito.Mockito.when;
 
