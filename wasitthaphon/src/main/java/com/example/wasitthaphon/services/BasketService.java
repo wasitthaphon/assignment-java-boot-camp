@@ -55,7 +55,7 @@ public class BasketService {
         Optional<User> user;
         Optional<Product> product;
 
-        user = userRepository.findById(basketRequestBody.getUserId());
+        user = userRepository.findByUserId(basketRequestBody.getUserId());
 
         if (!user.isPresent()) {
             throw new UserNotFoundException(Integer.toString(basketRequestBody.getUserId()));
@@ -68,53 +68,54 @@ public class BasketService {
         }
 
         // create selected features
-        basketRequestBody.getFeaturesSelected().forEach(item -> {
+
+        basketRequestBody.getFeaturesSelectedRequestBodies().forEach(item -> {
             FeatureSelected featureSelected = new FeatureSelected();
+            Optional<FeatureOption> option;
             featureSelected.setId((int) featureSelectedRepository.count() + 1);
             featureSelected.setUser(user.get());
             featureSelected.setProduct(product.get());
-            Optional<FeatureOption> option = featureOptionRepository
-                    .findByFeatureOptionId(item.getFeatureOption().getFeatureOptionId());
+
+            option = featureOptionRepository.findByFeatureOptionId(item.getFeatureOptionId());
 
             if (!option.isPresent()) {
-                throw new FeatureOptionNotFoundException(
-                        Integer.toString(item.getFeatureOption().getFeatureOptionId()));
+                throw new FeatureOptionNotFoundException(Integer.toString(item.getFeatureOptionId()));
             }
-
             featureSelected.setFeatureOption(option.get());
             featureSelectedRepository.save(featureSelected);
 
         });
 
+        basket.setUser(user.get());
         basket.setBasketId((int) basketRepository.count() + 1);
-        basket.setOrderQty(basketRequestBody.getOrderQuantity());
+        basket.setOrderQuantity(basketRequestBody.getOrderQuantity());
         basket.setProduct(product.get());
         product.get().setOnhandQuantity(product.get().getOnhandQuantity() - basketRequestBody.getOrderQuantity());
-        productRepository.save(product);
+        productRepository.save(product.get());
         basketRepository.save(basket);
 
         return basket;
 
     }
 
-    public void setBasketRepository(BasketRepository basketRepository2) {
-        basketRepository = basketRepository2;
+    public void setBasketRepository(BasketRepository basketRepository) {
+        this.basketRepository = basketRepository;
     }
 
-    public void setUserRepository(UserRepository userRepository2) {
-        userRepository = userRepository2;
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    public void setProductRepository(ProductRepository productRepository2) {
-        productRepository = productRepository2;
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
-    public void setFeatureSelectedRepository(FeatureSelectedRepository featureSelectedRepository2) {
-        featureSelectedRepository = featureSelectedRepository2;
+    public void setFeatureSelectedRepository(FeatureSelectedRepository featureSelectedRepository) {
+        this.featureSelectedRepository = featureSelectedRepository;
     }
 
-    public void setFeatureOptionRepository(FeatureOptionRepository featureOptionRepository2) {
-        featureOptionRepository = featureOptionRepository2;
+    public void setFeatureOptionRepository(FeatureOptionRepository featureOptionRepository) {
+        this.featureOptionRepository = featureOptionRepository;
     }
 
 }
