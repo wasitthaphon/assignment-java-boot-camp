@@ -2,7 +2,6 @@ package com.example.wasitthaphon.models;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -27,13 +26,16 @@ public class Product {
     private String productProfileImageUrl;
     private int onhandQuantity;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product")
     @JsonManagedReference
     private List<Feature> features;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product")
     @JsonManagedReference
     private List<ProductImage> productImages;
+
+    public Product() {
+    }
 
     public int getOnhandQuantity() {
         return onhandQuantity;
