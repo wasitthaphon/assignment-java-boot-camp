@@ -7,14 +7,18 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import com.example.wasitthaphon.models.Address;
 import com.example.wasitthaphon.models.Feature;
 import com.example.wasitthaphon.models.FeatureOption;
 import com.example.wasitthaphon.models.Product;
 import com.example.wasitthaphon.models.ProductImage;
+import com.example.wasitthaphon.models.User;
+import com.example.wasitthaphon.repositories.AddressRepository;
 import com.example.wasitthaphon.repositories.FeatureOptionRepository;
 import com.example.wasitthaphon.repositories.FeatureRepository;
 import com.example.wasitthaphon.repositories.ProductImageRepository;
 import com.example.wasitthaphon.repositories.ProductRepository;
+import com.example.wasitthaphon.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -33,7 +37,13 @@ public class WasitthaphonApplication {
 	private FeatureOptionRepository featureOptionRepository;
 
 	@Autowired
-	ProductImageRepository productImageRepository;
+	private UserRepository userRepository;
+
+	@Autowired
+	private ProductImageRepository productImageRepository;
+
+	@Autowired
+	private AddressRepository addressRepository;
 
 	@PostConstruct
 	public void InitialProducts() {
@@ -53,6 +63,23 @@ public class WasitthaphonApplication {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
+
+		User user = new User();
+		Address address = new Address();
+		List<Address> addresses = new ArrayList<Address>();
+
+		address.setAddressId(1);
+		address.setAddress("555 หมู่ 5 ตำบลในเมือง อำเภอเมือง");
+		address.setCity("ขอนแก่น");
+		address.setPostalCode("40000");
+		address.setTelephone("0992345445");
+		address.setZone("-");
+		user.setUserId(1);
+		user.setName("Ramee");
+		address.setUser(user);
+		user.setAddresses(addresses);
+		addressRepository.saveAll(addresses);
+		userRepository.save(user);
 
 		product1.setId(1);
 		product1.setStoreId(1);
@@ -374,7 +401,7 @@ public class WasitthaphonApplication {
 		featureRepository.save(feature6);
 
 		features5.add(feature6);
-		
+
 		productImage5.setId(5);
 		productImage5.setProduct(product5);
 		productImage5.setProductImageUrl("www.google.com");

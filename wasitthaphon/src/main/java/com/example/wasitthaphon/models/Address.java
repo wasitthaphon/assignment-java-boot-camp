@@ -2,9 +2,10 @@ package com.example.wasitthaphon.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "address")
@@ -12,8 +13,8 @@ public class Address {
     @Id
     private int addressId;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
+    @ManyToOne
+    @JsonBackReference
     private User user;
 
     private String address;

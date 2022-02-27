@@ -13,17 +13,25 @@ public class Basket {
     private int basketId;
 
     @OneToOne
-    @JoinColumn(name = "user_id", nullable = true)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @OneToOne
-    @JoinColumn(name = "product_id", nullable = true)
+    @JoinColumn(name = "product_id")
     private Product product;
 
-    private int orderQty;
+    private int orderQuantity;
 
     public int getBasketId() {
         return basketId;
+    }
+
+    public int getOrderQuantity() {
+        return orderQuantity;
+    }
+
+    public void setOrderQuantity(int orderQuantity) {
+        this.orderQuantity = orderQuantity;
     }
 
     public void setBasketId(int basketId) {
@@ -44,14 +52,6 @@ public class Basket {
 
     public void setProduct(Product product) {
         this.product = product;
-    }
-
-    public int getOrderQty() {
-        return orderQty;
-    }
-
-    public void setOrderQty(int orderQty) {
-        this.orderQty = orderQty;
     }
 
 }

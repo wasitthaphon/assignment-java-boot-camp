@@ -13,6 +13,4 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     Optional<List<Product>> findByTitleContains(String name, Pageable pageable);
 
     Optional<Product> findById(int id);
-
-    void save(Optional<Product> product);
 }

@@ -44,4 +44,8 @@ public class ProductService {
         throw new ProductNotFoundException(String.valueOf(id));
     }
 
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
 }

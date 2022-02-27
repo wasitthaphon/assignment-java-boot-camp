@@ -28,7 +28,7 @@ public class BasketRepositoryTest {
         // Act
         Optional<Basket> result = basketRepository.findByBasketId(1);
 
-        //
+        // Assert
         assertEquals(1, result.get().getBasketId());
 
     }

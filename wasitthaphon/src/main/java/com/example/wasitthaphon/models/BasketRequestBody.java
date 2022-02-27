@@ -7,10 +7,10 @@ public class BasketRequestBody {
     private int userId;
     private int productId;
     private int orderQuantity;
-    private List<FeatureSelected> featuresSelected;
+    private List<FeatureSelectedRequestBody> featuresSelectedRequestBodies;
 
     public BasketRequestBody() {
-        featuresSelected = new ArrayList<FeatureSelected>();
+        featuresSelectedRequestBodies = new ArrayList<FeatureSelectedRequestBody>();
     }
 
     public int getUserId() {
@@ -37,11 +37,11 @@ public class BasketRequestBody {
         this.orderQuantity = orderQuantity;
     }
 
-    public List<FeatureSelected> getFeaturesSelected() {
-        return featuresSelected;
+    public List<FeatureSelectedRequestBody> getFeaturesSelectedRequestBodies() {
+        return featuresSelectedRequestBodies;
     }
 
-    public void setFeaturesSelected(List<FeatureSelected> featuresSelected) {
-        this.featuresSelected = featuresSelected;
+    public void setFeaturesSelectedRequestBodies(List<FeatureSelectedRequestBody> featuresSelectedRequestBodies) {
+        this.featuresSelectedRequestBodies = featuresSelectedRequestBodies;
     }
 }
