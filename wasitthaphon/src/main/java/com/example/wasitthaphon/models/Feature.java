@@ -3,7 +3,6 @@ package com.example.wasitthaphon.models;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -21,7 +20,7 @@ public class Feature {
     private Boolean isRequired;
     private int selectedOption;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JsonBackReference
     private Product product;
 
