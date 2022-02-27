@@ -44,7 +44,7 @@ public class BasketControllerTest {
         final int PRODUCT_ID = 4;
         final int BASKET_ID = 1;
         final int FIND_BASKET_BY_ID = 1;
-        final String BASKET_URL = "/baskets";
+        final String BASKET_URL = "/baskets/";
 
         Basket basket = new Basket();
         Product product = new Product();
@@ -78,7 +78,7 @@ public class BasketControllerTest {
         // 1. Assume products is exist
         // 2. Assume user is exist
         final String BASKET_URL = "/baskets";
-  
+
         Basket basket = new Basket();
         BasketRequestBody basketRequestBody = new BasketRequestBody();
         FeatureSelectedRequestBody featureSelectedRequestBody = new FeatureSelectedRequestBody();
@@ -86,7 +86,6 @@ public class BasketControllerTest {
 
         List<Product> products = new ArrayList<Product>();
         List<FeatureSelectedRequestBody> featureSelectedRequestBodies = new ArrayList<FeatureSelectedRequestBody>();
-
 
         products = MockDataForTest.generateProducts();
 
