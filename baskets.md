@@ -31,18 +31,12 @@ Path parameters
 Response model - application/json
 ส่งกลับรูปแบบอาร์เรย์ของไอเท็มที่มีโครงสร้างตามตาราง
 
-| Name                                | Tpye     | Description             |
-| ----------------------------------- | -------- | ----------------------- |
-| basketId                            | Integer  | ไอดีตะกร้า              |
-| userId                              | Integer  | ไอดีผู้ใช้              |
-| productId                           | Integer  | สินค้าที่นำเข้าตระกร้า  |
-| orderQuantity                       | Integer  | จำนวนที่ซื้อ            |
-| featureSelected                     | Object[] | รายการคุณสมบัติที่เลือก |
-| &nbsp;&nbsp;&nbsp;featureSelectedId | Integer  | ไอดีฟีเจอร์             |
-| &nbsp;&nbsp;&nbsp;productId         | Integer  | ไอดีสินค้า              |
-| &nbsp;&nbsp;&nbsp;featureId         | Ineger   | ไอดีฟีเจอร์             |
-| &nbsp;&nbsp;&nbsp;featureName       | String   | ชื่อฟีเจอร์             |
-| &nbsp;&nbsp;&nbsp;selectedValue     | String   | ค่าที่เลือกในฟีเจอร์    |
+| Name          | Tpye    | Description  |
+| ------------- | ------- | ------------ |
+| basketId      | Integer | ไอดีตะกร้า   |
+| user          | User    | ผู้ใช้       |
+| product       | Product | สินค้า       |
+| orderQuantity | Integer | จำนวนที่ซื้อ |
 
 ### POST /baskets
 
@@ -57,18 +51,25 @@ Response model - application/json
 
 Request body
 
-| Name                                | Type     | Description             |
-| ----------------------------------- | -------- | ----------------------- |
-| userId                              | Integer  | ไอดีผู้ใช้              |
-| productId                           | Integer  | ไอดีสินค้า              |
-| orderQuantity                       | Integer  | จำนวนที่ซื้อ            |
-| featureSelected                     | Object[] | รายการคุณสมบัติที่เลือก |
-| &nbsp;&nbsp;&nbsp;featureSelectedId | Integer  | ไอดีฟีเจอร์             |
-| &nbsp;&nbsp;&nbsp;productId         | Integer  | ไอดีสินค้า              |
-| &nbsp;&nbsp;&nbsp;featureId         | Ineger   | ไอดีฟีเจอร์             |
-| &nbsp;&nbsp;&nbsp;featureName       | String   | ชื่อฟีเจอร์             |
-| &nbsp;&nbsp;&nbsp;selectedValue     | String   | ค่าที่เลือกในฟีเจอร์    |
+| Name                              | Type     | Description             |
+| --------------------------------- | -------- | ----------------------- |
+| userId                            | Integer  | ไอดีผู้ใช้              |
+| productId                         | Integer  | ไอดีสินค้า              |
+| orderQuantity                     | Integer  | จำนวนที่ซื้อ            |
+| featureSelected                   | Object[] | รายการคุณสมบัติที่เลือก |
+| &nbsp;&nbsp;&nbsp;featureId       | Ineger   | ไอดีฟีเจอร์             |
+| &nbsp;&nbsp;&nbsp;featureOptionId | Ineger   | ไอดีตัวเลือก            |
 
 #### Response
 
-Status code - 201
+Response model - application/json
+ส่งกลับรูปแบบอาร์เรย์ของไอเท็มที่มีโครงสร้างตามตาราง
+
+| Name          | Tpye    | Description  |
+| ------------- | ------- | ------------ |
+| basketId      | Integer | ไอดีตะกร้า   |
+| user          | User    | ผู้ใช้       |
+| product       | Product | สินค้า       |
+| orderQuantity | Integer | จำนวนที่ซื้อ |
+
+Status code - 200

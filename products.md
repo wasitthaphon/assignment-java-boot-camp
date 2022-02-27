@@ -36,27 +36,28 @@ Response model - application/json <br>
 
 | Name                                                | Type     | Description                   |
 | --------------------------------------------------- | -------- | ----------------------------- |
-| productId                                           | Integer  | ไอดีสินค้า                    |
+| id                                                  | Integer  | ไอดีสินค้า                    |
 | storeId                                             | Integer  | เลขร้านค้า                    |
 | title                                               | String   | ชื่อสินค้า                    |
+| price                                               | Double   | ราคาของสินค้า                 |
+| hasDiscount                                         | Boolean  | Flag ว่ามี discount ไหม       |
+| discount                                            | Integer  | เปอร์เซ็นต์ลดราคา             |
+| discountExpiredDate                                 | String   | วันหมดเขตลดราคา               |
+| rating                                              | Double   | เรตติ้ง                       |
+| reviewerCount                                       | Integer  | จำนวนรีวิว                    |
+| sellCity                                            | String   | เมืองที่จำหน่าย               |
+| productProfileImageUrl                              | String   | ที่อยู่ของภาพโปรไฟล์ของสินค้า |
+| onhandQuantity                                      | Integer  | จำนวนสินค้าคงเหลือ            |
 | features                                            | object[] | รายการคุณสมบัติ               |
-| &nbsp;&nbsp;&nbsp;featuresId                        | Integer  | รหัสฟีเจอร์                   |
+| &nbsp;&nbsp;&nbsp;id                                | Integer  | รหัสฟีเจอร์                   |
 | &nbsp;&nbsp;&nbsp;name                              | String   | ชื่อของฟีเจอร์                |
 | &nbsp;&nbsp;&nbsp;isRequired                        | Boolean  | ตัวกำกับว่าบังคับหรือไม่      |
+| &nbsp;&nbsp;&nbsp;selectedOption                    | Integer  | ตัวเลือกที่เลือก              |
 | &nbsp;&nbsp;&nbsp;featureOptions                    | object[] | ลิสต์ตัวเลือกของคุณสมบัติ     |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;featureOptionId | Integer  | ไอดีตัวเลือกของคุณสมบัติ      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;featuresId      | Integer  | ไอดีคุณสมบัติ                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;optionName      | String   | ชื่อตัวเลือก                  |
-| price                                               | Double   | ราคาของสินค้า                 |
-| priceAfterDiscount                                  | Double   | ราคาหลังหักส่วนลด             |
-| discountPercent                                     | Integer  | เปอร์เซ็นต์ลดราคา             |
-| ratingStar                                          | Integer  | เรตติ้งเป็นเปอร์เซ็นต์        |
-| reviewerCount                                       | Integer  | จำนวนคนให้คะแนน               |
-| originSellCity                                      | String   | เมืองที่จำหน่าย               |
-| productProfileImageUrl                              | String   | ที่อยู่ของภาพโปรไฟล์ของสินค้า |
 | productImages                                       | Object[] | ภาพสินค้า                     |
-| &nbsp;&nbsp;&nbsp;productImageId                    | Integer  | ไอดีไฟล์ภาพสินค้า             |
-| &nbsp;&nbsp;&nbsp;productId                         | Integer  | รหัสสินค้า                    |
+| &nbsp;&nbsp;&nbsp;id                                | Integer  | ไอดีไฟล์ภาพสินค้า             |
 | &nbsp;&nbsp;&nbsp;productImageUrl                   | String   | ที่อยู่ของไฟล์ภาพสินค้า       |
 
 ### GET /products/{id}
@@ -83,25 +84,26 @@ Response model - application/json <br>
 
 | Name                                                | Type     | Description                   |
 | --------------------------------------------------- | -------- | ----------------------------- |
-| productId                                           | Integer  | ไอดีสินค้า                    |
+| id                                                  | Integer  | ไอดีสินค้า                    |
 | storeId                                             | Integer  | เลขร้านค้า                    |
 | title                                               | String   | ชื่อสินค้า                    |
+| price                                               | Double   | ราคาของสินค้า                 |
+| hasDiscount                                         | Boolean  | Flag ว่ามี discount ไหม       |
+| discount                                            | Integer  | เปอร์เซ็นต์ลดราคา             |
+| discountExpiredDate                                 | String   | วันหมดเขตลดราคา               |
+| rating                                              | Double   | เรตติ้ง                       |
+| reviewerCount                                       | Integer  | จำนวนรีวิว                    |
+| sellCity                                            | String   | เมืองที่จำหน่าย               |
+| productProfileImageUrl                              | String   | ที่อยู่ของภาพโปรไฟล์ของสินค้า |
+| onhandQuantity                                      | Integer  | จำนวนสินค้าคงเหลือ            |
 | features                                            | object[] | รายการคุณสมบัติ               |
-| &nbsp;&nbsp;&nbsp;featuresId                        | Integer  | รหัสฟีเจอร์                   |
+| &nbsp;&nbsp;&nbsp;id                                | Integer  | รหัสฟีเจอร์                   |
 | &nbsp;&nbsp;&nbsp;name                              | String   | ชื่อของฟีเจอร์                |
 | &nbsp;&nbsp;&nbsp;isRequired                        | Boolean  | ตัวกำกับว่าบังคับหรือไม่      |
+| &nbsp;&nbsp;&nbsp;selectedOption                    | Integer  | ตัวเลือกที่เลือก              |
 | &nbsp;&nbsp;&nbsp;featureOptions                    | object[] | ลิสต์ตัวเลือกของคุณสมบัติ     |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;featureOptionId | Integer  | ไอดีตัวเลือกของคุณสมบัติ      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;featuresId      | Integer  | ไอดีคุณสมบัติ                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;optionName      | String   | ชื่อตัวเลือก                  |
-| price                                               | Double   | ราคาของสินค้า                 |
-| priceAfterDiscount                                  | Double   | ราคาหลังหักส่วนลด             |
-| discountPercent                                     | Integer  | เปอร์เซ็นต์ลดราคา             |
-| ratingStar                                          | Integer  | เรตติ้งเป็นเปอร์เซ็นต์        |
-| reviewerCount                                       | Integer  | จำนวนคนให้คะแนน               |
-| originSellCity                                      | String   | เมืองที่จำหน่าย               |
-| productProfileImageUrl                              | String   | ที่อยู่ของภาพโปรไฟล์ของสินค้า |
 | productImages                                       | Object[] | ภาพสินค้า                     |
-| &nbsp;&nbsp;&nbsp;productImageId                    | Integer  | ไอดีไฟล์ภาพสินค้า             |
-| &nbsp;&nbsp;&nbsp;productId                         | Integer  | รหัสสินค้า                    |
+| &nbsp;&nbsp;&nbsp;id                                | Integer  | ไอดีไฟล์ภาพสินค้า             |
 | &nbsp;&nbsp;&nbsp;productImageUrl                   | String   | ที่อยู่ของไฟล์ภาพสินค้า       |
