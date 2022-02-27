@@ -8,6 +8,7 @@
 - [POST /baskets/{userId}](#post-basketuserid)
   - [Request](#request-2)
   - [Response](#response-2)
+- [Example](#example)
 
 ## รายละเอียดของแต่ละ Api
 
@@ -73,3 +74,25 @@ Response model - application/json
 | orderQuantity | Integer | จำนวนที่ซื้อ |
 
 Status code - 200
+
+### Example
+
+- localhost:8080/basket
+
+Request body
+
+```json
+{
+  "userId": 1,
+  "productId": 4,
+  "orderQuantity": 1,
+  "featuresSelectedRequestBodies": [
+    {
+      "featureId": 5,
+      "featureOptionId": 11
+    }
+  ]
+}
+```
+
+- localhost:8080/baskets/1
