@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "user")
 public class User {
@@ -16,6 +18,7 @@ public class User {
     private String name;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference
     private List<Address> addresses;
 
     public int getUserId() {
