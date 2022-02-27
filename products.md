@@ -8,6 +8,7 @@
 - [GET /products/{id}](#get-productsid)
   - [Request](#request-1)
   - [Response](#response-1)
+- [Example](#example)
 
 ## รายละเอียดของแต่ละ Api
 
@@ -107,3 +108,8 @@ Response model - application/json <br>
 | productImages                                       | Object[] | ภาพสินค้า                     |
 | &nbsp;&nbsp;&nbsp;id                                | Integer  | ไอดีไฟล์ภาพสินค้า             |
 | &nbsp;&nbsp;&nbsp;productImageUrl                   | String   | ที่อยู่ของไฟล์ภาพสินค้า       |
+
+### Example
+
+- localhost:8080/products/4
+- localhost:8080/products?search_query=Adidas NMD&limit=5
